@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/starter.css">
+    <title>Domein - Abel Documentatie</title>
+  </head>
+  <body>
+    <div class="col-md-8 py-5 px-3 mx-auto">
+
+      <header class="pb-3 mb-5 border-bottom row justify-content-between">
+        <h1 class="h4 main-title">
+          <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-star"
+                viewBox="0 0 16 16">
+                <path
+                    d="M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.178.178 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.178.178 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.178.178 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.178.178 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.178.178 0 0 0 .134-.098L7.84 4.1z" />
+                <path
+                    d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
+            </svg>
+            <span>Abel Website Documentatie - instellen domein</span>
+          </a>
+        </h1>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link" href="/domein/">Domein</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/email/">E-mail</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login/">Site login</a>
+            </li>
+        </ul>
+      </header>
+
+      <h1>Aan de slag met je Abel website!</h1>
+      <div class="col-lg-8 px-0">
+        <p class="lead">Om je Abel website goed te laten functioneren dienen we enkele stappen te doorlopen. <b>Stap 1:</b> <a href="/domein/">betreft je domeinnaam</a>. <b>Stap 2:</b> <a href="/email/">de e-mail instellingen</a> en <b>Stap 3:</b><a href="/login/">betreft de instellingen voor inloggen</a>.</p>
+        <p>If this button appears blue and the link appears purple, you've done it!</p>
+      </div>
+
+      <a href="/domein/" class="btn btn-primary mr-3">Begin bij je domein</a>
+      <a href="#" class="text-success" data-toggle="modal" data-target="#contactModal">of neem contact op</a>
+
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Contact opnemen</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="needs-validation" novalidate netlify>
+                    <div class="modal-body">
+                    
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <label for="name" class="form-label">Uw naam</label>
+                                <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Uw naam is een verplicht veld.
+                                </div>
+                            </div>
+                
+                            <div class="col-sm-6">
+                                <label for="email" class="form-label">E-mailadres</label>
+                                <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                                <div class="invalid-feedback">
+                                    Uw e-mailadres is een verplicht veld
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-sm-12">
+                                <label for="text" class="form-label">Uw vraag</label>
+                                <textarea class="form-control" id="text"></textarea>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer row row-justify-between">
+                        <a href="#" class="text-danger" data-dismiss="modal">Venster sluiten</a>
+                        <button 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+      <hr class="my-5 w-25 mx-0">
+
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Adding Bootstrap Icons</h2>
+          <p><a href="https://icons.getbootstrap.com">Bootstrap Icons</a> are included with the SVG sprite here, but there are other <a href="https://icons.getbootstrap.com/#usage">usage options</a>, too. They're styleable with text utilities and more.</p>
+
+          <svg class="bi text-danger" width="32" height="32">
+            <use xlink:href="node_modules/bootstrap-icons/bootstrap-icons.svg#heart-fill"/>
+          </svg>
+          <svg class="bi text-dark" width="32" height="32">
+            <use xlink:href="node_modules/bootstrap-icons/bootstrap-icons.svg#toggles"/>
+          </svg>
+          <svg class="bi text-primary" width="32" height="32">
+            <use xlink:href="node_modules/bootstrap-icons/bootstrap-icons.svg#shop"/>
+          </svg>
+        </div>
+
+        <div class="col-md-6">
+          <h2>Guides</h2>
+          <p>Read more detailed instructions and documentation on using or contributing to Bootstrap.</p>
+          <ul class="icon-list">
+            <li><a href="https://getbootstrap.com/docs/4.6/getting-started/introduction">Bootstrap quick start guide</a></li>
+            <li><a href="https://getbootstrap.com/docs/4.6/getting-started/webpack">Bootstrap Webpack guide</a></li>
+            <li><a href="https://getbootstrap.com/docs/4.6/getting-started/build-tools">Contributing to Bootstrap</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="my-5">
+
+      <p class="text-muted">&copy; 2021 Abel Installaties</p>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script type="module" src="assets/js/starter.js"></script>
+  </body>
+</html>
