@@ -19,7 +19,7 @@
                 <path
                     d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
             </svg>
-            <span>Abel Website Documentatie - Email instellingen</span>
+            <span>Abel Website Documentatie - instellen email</span>
           </a>
         </h1>
         <ul class="nav justify-content-end">
@@ -35,10 +35,36 @@
         </ul>
       </header>
 
-      <h1>Aan de slag met je Abel website!</h1>
+      <h1>DNS instellingen t.b.v. email</h1>
       <div class="col-lg-8 px-0">
-        <p class="lead">Om je Abel website goed te laten functioneren dienen we enkele stappen te doorlopen. <b>Stap 1:</b> <a href="/domein/">betreft je domeinnaam</a>. <b>Stap 2:</b> <a href="/email/">de e-mail instellingen</a> en <b>Stap 3:</b><a href="/login/">betreft de instellingen voor inloggen</a>.</p>
-        <p>If this button appears blue and the link appears purple, you've done it!</p>
+        <p class="lead">Uw website zal mails gaan versturen vanuit uw domein, denk aan een contactformulier of een offerte-aanvraag. Om te zorgen dat deze mails niet direct in de SPAM terecht gaan komen dient u onderstaande DKIM instellingen door te voeren op uw domein.
+          <br /><br />
+          <p>DKIM is een DNS-standaad voor e-mailauthenticatie. Het helpt Abel met het effectiever verzenden van mail vanuit uw domein. Het verifiëerd dat Abel toestemming heeft om namens U mail te versturen vanuit de website en zorgt er voor dat e-mail bijna niet meer in de spam-folder beland.</p>
+
+<p>Om DKIM in te schakelen dient er een TXT record in de DNS aangemaakt te worden met de volgende key: </p>
+
+<pre><code>mandrill._domainkey.[uw domein hier].nl</code></pre>
+
+<p>Met de volgende waarde:</p>
+
+<pre><code>v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCrLHiExVd55zd/IQ/J/mRwSRMAocV/hMB3jXwaHH36d9NaVynQFYV8NaWi69c1veUtRzGt7yAioXqLj7Z4TeEUoOLgrKsn8YnckGs9i3B3tVFB+Ch/4mPhXWiNfNdynHWBcPcbJ8kjEQ2U8y78dHZj1YeRXXVvWob2OaKynO8/lQIDAQAB;</code></pre>
+
+<p>Sommige DNS provides vereisen dat punt-comma&#39;s ge-escaped worden. Als dat het geval is, dan dient u deze waarde te gebruiken:</p>
+
+<pre><code>v=DKIM1\; k=rsa\; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCrLHiExVd55zd/IQ/J/mRwSRMAocV/hMB3jXwaHH36d9NaVynQFYV8NaWi69c1veUtRzGt7yAioXqLj7Z4TeEUoOLgrKsn8YnckGs9i3B3tVFB+Ch/4mPhXWiNfNdynHWBcPcbJ8kjEQ2U8y78dHZj1YeRXXVvWob2OaKynO8/lQIDAQAB\;</code></pre>
+
+<h1>SPF</h1>
+
+<p>SPF is nog een e-mail authenticatie mechanisme op basis van DNS. Als u nog geen SPF record hebt is het slim om deze toe te voegen aan uw domein. De waarde van het SPF-record zou minimaal het volgende moeten zijn, om Abel goedkeuring te verlenen:</p>
+
+<pre><code>v=spf1 include:spf.mandrillapp.com ?all</code></pre>
+
+<p>Als u al een TXT record met SPF informatie hebt staan (bijvoorbeeld voor het gebruik van Microsoft Exchange) dan dient u Abel&#39;s server toe te voegen aan dat record door het volgende toe te voegen:</p>
+
+<pre><code>include:spf.mandrillapp.com</code></pre>
+
+<p>Dit dient net <strong>vóór</strong> het laatste commando te worden toegevoegd.. Dit laatste commando is meestal <code>?all, ~all of -all</code>.</p>
+
       </div>
 
       <a href="/domein/" class="btn btn-primary mr-3">Begin bij je domein</a>
